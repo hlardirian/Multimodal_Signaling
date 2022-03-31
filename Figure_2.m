@@ -1,6 +1,6 @@
 %% load data 
 %load('C:\Paper_Data\WorkingData_7_2.mat');
-load('Z:\bkramer\190218_184A1_EGF\Processed_Data\WorkingData_7_7.mat')
+load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Data_1.mat')
 addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\'));
 javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
 load('Z:\bkramer\190218_184A1_EGF\Processed_Data\CubeHelixLong.mat');
@@ -131,12 +131,6 @@ axis square
 legend off
 axis off
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ERK_PredictedMeasured.jpg'];
-% export_fig(ExportPath,'-r1200')
-% 
-% axis on
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ERK_PredictedMeasured.pdf'];
-% export_fig(ExportPath,'-painters')
 
 % Calculation of RSquared (Depends on the way it's calculated and the crossevaluation set(varies between 0.83 and 0.85); here we use the most "canonical" definition)
 CurrentWells = [1,2,3];
@@ -150,7 +144,6 @@ SSTotal = sum((CellResponseData - mean(CellResponseData)).^2);
 Residuals = CellResponseData - Prediction;
 SSResidual = sum(Residuals.^2);
 RSquared = 1 - SSResidual/SSTotal;
-
 
 
 % Generate UMAP - CAVEAT!!!!! EVERY UMAP RUN CAN DIFFER
@@ -185,15 +178,11 @@ for CurrentResponseIndex = 1:3%1:3
         set(gcf,'position',[2963 -211 590.8 450])
         axis off
         
-        ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\UMAP_Measured_',num2str(CurrentResponseIndex),'.jpg'];
-        export_fig(ExportPath,'-r1200','-transparent')
         
         set(gcf,'position',[2963 -211 590.8 450])
         axis on
         colorbar
-        ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\UMAP_Measured_',num2str(CurrentResponseIndex),'.pdf'];
-        export_fig(ExportPath,'-painters')
-        
+     
 
         StoragePrediction = [];
         
@@ -288,14 +277,10 @@ for CurrentResponseIndex = 1:3%1:3
         set(gcf,'position',[2963 -211 590.8 450])
         axis off
         
-%         ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\UMAP_Predicted_',num2str(CurrentResponseIndex),'.jpg'];
-%         export_fig(ExportPath,'-r1200','-transparent')
-        
         set(gcf,'position',[2963 -211 590.8 450])
         axis on
         colorbar
-%         ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\UMAP_Predicted_',num2str(CurrentResponseIndex),'.pdf'];
-%         export_fig(ExportPath,'-painters')
+
         
                  
         colorbar
@@ -314,6 +299,10 @@ for CurrentResponseIndex = 1:3%1:3
         
     end
 end
+
+%%% DOMINANCE ANALYSIS %%%
+
+% Analysis for all response stains can be found in script for Supplementary figure 4
 
 
 %% Figure 2B
@@ -388,8 +377,6 @@ axis image
 colorbar
 title('ConfusionMatrix pERK 6.25ng/ml EGF')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ConfusionMat_pERK_625.pdf'];
-% export_fig(ExportPath,'-painters')
 
 % pAKT - 6.25ng/ml EGF
 
@@ -461,8 +448,6 @@ axis image
 colorbar
 title('ConfusionMatrix pAKT 6.25ng/ml EGF')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ConfusionMat_pAKT_625.pdf'];
-% export_fig(ExportPath,'-painters')
 
 % pRSK - 6.25ng/ml EGF
 
@@ -534,8 +519,6 @@ axis image
 colorbar
 title('ConfusionMatrix pRSK 10ng/ml EGF')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ConfusionMat_pRSK_10.pdf'];
-% export_fig(ExportPath,'-painters')
 
 % pGSK3B - 6.25ng/ml EGF
 
@@ -607,9 +590,163 @@ axis image
 colorbar
 title('ConfusionMatrix pGSK3B 10ng/ml EGF')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ConfusionMat_pGSK3B_625.pdf'];
-% export_fig(ExportPath,'-painters')
 
+%% Comparison between splitting into training/test and just extensive crossvalidation
+
+%%% Since they yield nigh indistinguishable results, to save a lot of computational time some of the code provided uses only crossvalidation while all data generated for the figures always used train/test and cross val. Please use this as template in case you want to try both for the following analyses (in all the figures) %%%
+
+% Calculations for RSquare Matrix - Just Crossval
+
+CurrentResponseVector = [18,168,3,123,153,108,33,91,61,78];
+NameCell = {'pEGFR','pMEK','pERK','pRSK','pGSK3B','pMTOR','pAKT','FoxO1','FoxO3a','pS6'};
+
+WellGroups = {[13,14,15],[10,19,20],[7,8,9],[4,5,6],[1,2,3]};
+
+ConcentrationString = {'0ng','6.25ng','10ng','25ng','100ng'};
+RSquareStorageCVAL = zeros(10,5);
+
+for CurrentResponseIndex = 1:size(CurrentResponseVector,2)
+    CurrentResponse = CurrentResponseVector(CurrentResponseIndex);
+
+    for CurrentGroup = 1:size(WellGroups,2)
+        
+        CurrentWells = WellGroups{1,CurrentGroup};       
+        % Calculation of RSquared - Depends on the way it's calculated and the crossevaluation set(varies by about ~0.03 for each stain); here we use the most "canonical" definition
+        CurrentWellIndex = find(ismember(LinearIndex,CurrentWells));
+        CellFeatureData = PCFeatureData(CurrentWellIndex,:);
+        CellResponseData = zscore(LogResponseData(CurrentWellIndex,CurrentResponse));
+        MDL = cvglmnet(CellFeatureData,CellResponseData);
+        Prediction = cvglmnetPredict(MDL,CellFeatureData);
+        
+        SSTotal = sum((CellResponseData - mean(CellResponseData)).^2);
+        Residuals = CellResponseData - Prediction;
+        SSResidual = sum(Residuals.^2);
+        RSquared = 1 - SSResidual/SSTotal;
+        RSquareStorageCVAL(CurrentResponseIndex,CurrentGroup) = RSquared;       
+    end   
+end
+
+
+% Calculations for RSquare Matrix - Split
+
+% Generate UMAP - CAVEAT!!!!! EVERY UMAP RUN CAN DIFFER
+WellIndex = find(ismember(LinearIndex,[1,2,3,4,5,6,7,8,9,10,19,20,13,14,15]));
+ReducedLinearIndex = LinearIndex(WellIndex);
+
+ReducedResponseData = LogResponseData(WellIndex,:);
+ReducedFeatureData = PCFeatureData(WellIndex,:);
+
+
+CurrentResponseVector = [18,168,3,123,153,108,33,91,61,78];
+NameCell = {'pEGFR','pMEK','pERK','pRSK','pGSK3B','pMTOR','pAKT','FoxO1','FoxO3a','pS6'};
+
+WellGroups = {[13,14,15],[10,19,20],[7,8,9],[4,5,6],[1,2,3]};
+
+ConcentrationString = {'0ng','6.25ng','10ng','25ng','100ng'};
+RSquareStorageSplit = zeros(10,5);
+
+for CurrentResponseIndex = 1:size(CurrentResponseVector,2)
+    CurrentResponse = CurrentResponseVector(CurrentResponseIndex);
+    for CurrentGroup = 1:size(WellGroups,2)
+        
+        CurrentWells = WellGroups{1,CurrentGroup};
+        StoragePrediction = [];
+        StorageTrue = [];
+        
+        % Predict Replicate one
+        TrueWell = CurrentWells(1);
+        IndWell = CurrentWells(2:3);
+        
+        WellIndexTrue = find(ismember(ReducedLinearIndex,TrueWell));
+        WellIndexInd = find(ismember(ReducedLinearIndex,IndWell));
+        
+        TrueResponseData = zscore(ReducedResponseData(WellIndexTrue,CurrentResponse));
+        IndResponseData = zscore(ReducedResponseData(WellIndexInd,CurrentResponse));
+        
+        TrueFeatureData = ReducedFeatureData(WellIndexTrue,:);
+        IndFeatureData = ReducedFeatureData(WellIndexInd,:);
+        
+        MDL = cvglmnet(IndFeatureData,IndResponseData);
+        Prediction = cvglmnetPredict(MDL,TrueFeatureData);
+        
+        CurrentNormData = Prediction;
+
+        Iterations = 20;
+        
+        for CurrentIteration = 1:Iterations
+            NormedData = quantilenorm([TrueResponseData,CurrentNormData]);
+            CurrentNormData = NormedData(:,2);
+        end
+        
+        StoragePrediction = [StoragePrediction;CurrentNormData];
+        StorageTrue = [StorageTrue;TrueResponseData];
+        
+        % Predict Replicate two
+        TrueWell = CurrentWells(2);
+        IndWell = CurrentWells([1,3]);
+        
+        WellIndexTrue = find(ismember(ReducedLinearIndex,TrueWell));
+        WellIndexInd = find(ismember(ReducedLinearIndex,IndWell));
+        
+        TrueResponseData = zscore(ReducedResponseData(WellIndexTrue,CurrentResponse));
+        IndResponseData = zscore(ReducedResponseData(WellIndexInd,CurrentResponse));
+        
+        TrueFeatureData = ReducedFeatureData(WellIndexTrue,:);
+        IndFeatureData = ReducedFeatureData(WellIndexInd,:);
+        
+        MDL = cvglmnet(IndFeatureData,IndResponseData);
+        Prediction = cvglmnetPredict(MDL,TrueFeatureData);
+        
+        CurrentNormData = Prediction;
+
+        Iterations = 20;
+        
+        for CurrentIteration = 1:Iterations
+            NormedData = quantilenorm([TrueResponseData,CurrentNormData]);
+            CurrentNormData = NormedData(:,2);
+        end
+        
+        StoragePrediction = [StoragePrediction;CurrentNormData];
+        StorageTrue = [StorageTrue;TrueResponseData];
+        
+        % Predict Replicate three
+        TrueWell = CurrentWells(3);
+        IndWell = CurrentWells(1:2);
+        
+        WellIndexTrue = find(ismember(ReducedLinearIndex,TrueWell));
+        WellIndexInd = find(ismember(ReducedLinearIndex,IndWell));
+        
+        TrueResponseData = zscore(ReducedResponseData(WellIndexTrue,CurrentResponse));
+        IndResponseData = zscore(ReducedResponseData(WellIndexInd,CurrentResponse));
+        
+        TrueFeatureData = ReducedFeatureData(WellIndexTrue,:);
+        IndFeatureData = ReducedFeatureData(WellIndexInd,:);
+        
+        MDL = cvglmnet(IndFeatureData,IndResponseData);
+        Prediction = cvglmnetPredict(MDL,TrueFeatureData);
+        
+        CurrentNormData = Prediction;
+
+        Iterations = 20;
+        
+        for CurrentIteration = 1:Iterations
+            NormedData = quantilenorm([TrueResponseData,CurrentNormData]);
+            CurrentNormData = NormedData(:,2);
+        end
+        
+        StoragePrediction = [StoragePrediction;CurrentNormData];
+        StorageTrue = [StorageTrue;TrueResponseData];
+        
+        SSTotal = sum((StorageTrue - mean(StorageTrue)).^2);
+        Residuals = StorageTrue - StoragePrediction;
+        SSResidual = sum(Residuals.^2);
+        RSquared = 1 - SSResidual/SSTotal;
+        RSquareStorageSplit(CurrentResponseIndex,CurrentGroup) = RSquared;
+        
+
+    end  
+
+end
 
 
 %% Figure 2C
@@ -643,14 +780,12 @@ for CurrentResponseIndex = 1
         set(gcf,'position',[2963 -211 590.8 450])
         axis off
         
-%         ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\UMAP_Measured_DR_',num2str(CurrentGroup),'.jpg'];
-%         export_fig(ExportPath,'-r1200','-transparent')
+
         
         set(gcf,'position',[2963 -211 590.8 450])
         axis on
         colorbar
-%         ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\UMAP_Measured_DR_',num2str(CurrentGroup),'.pdf'];
-%         export_fig(ExportPath,'-painters')
+
         
         StoragePrediction = [];
         
@@ -744,14 +879,11 @@ for CurrentResponseIndex = 1
         set(gcf,'position',[2963 -211 590.8 450])
         axis off
         
-%         ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\UMAP_Predicted_DR_',num2str(CurrentGroup),'.jpg'];
-%         export_fig(ExportPath,'-r1200','-transparent')
         
         set(gcf,'position',[2963 -211 590.8 450])
         axis on
         colorbar
-%         ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\UMAP_Predicted_DR_',num2str(CurrentGroup),'.pdf'];
-%         export_fig(ExportPath,'-painters')   
+
            
     end
 end
@@ -812,9 +944,6 @@ xticks([1.5:1:5.5])
 xticklabels(ConcentrationString)
 xtickangle(90)
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ExplainedVarianceAcrossDoses.pdf'];
-% export_fig(ExportPath,'-painters')
-
 % Plot pooled RSquare
 
 PlotMatrix = [flipud(RSquareStoragePooled),zeros(10,1);zeros(1,2)];
@@ -833,6 +962,8 @@ xtickangle(90)
 
 % ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ExplainedVariancePooled.pdf'];
 % export_fig(ExportPath,'-painters')
+
+
 
 %% Figure 2D
 
@@ -894,8 +1025,7 @@ xlabel('log2 mean signal (a.u.)')
 ylabel('Density')
 ylim([0 2.4])
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\Density_pERK_Corrected.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 figure(2)
 legend('6.25ng/ml EGF','10ng/ml EGF','100ng/ml EGF')
@@ -906,8 +1036,6 @@ xlabel('log2 mean signal (a.u.)')
 ylabel('Density')
 ylim([0 1.2])
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\Density_pERK_Predicted.pdf'];
-% export_fig(ExportPath,'-painters')
 
 
 
@@ -983,8 +1111,7 @@ colormap(brewermap(500,'Blues'));
 caxis([0 1])
 title('Change in State')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\Variation_pColor_CellularState.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 % Change in EGF - 1
 
@@ -999,8 +1126,7 @@ colormap(brewermap(500,'Blues'));
 caxis([0 1])
 title('Change in EGF')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\Variation_pColor_ChangeEGF1.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 % Change in EGF - 2
 
@@ -1015,8 +1141,7 @@ colormap(brewermap(500,'Blues'));
 caxis([0 1])
 title('Change in EGF')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\Variation_pColor_ChangeEGF2.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 % Change in EGF - 3
 
@@ -1031,8 +1156,7 @@ colormap(brewermap(500,'Blues'));
 caxis([0 1])
 title('Change in EGF')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\Variation_pColor_ChangeEGF3.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 % Change in EGF - 4
@@ -1048,8 +1172,7 @@ colormap(brewermap(500,'Blues'));
 caxis([0 1])
 title('Change in EGF')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\Variation_pColor_ChangeEGF4.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 % yticks(1:10);
