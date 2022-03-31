@@ -1,5 +1,5 @@
 %% load data 
-load('Z:\bkramer\190218_184A1_EGF\Processed_Data\WorkingData_7_7.mat');
+load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Data_1.mat')
 addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\'));
 javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
 load('Z:\bkramer\190218_184A1_EGF\Processed_Data\CubeHelixLong.mat');
@@ -76,13 +76,11 @@ xlim([-7.5 10.5])
 set(gcf,'position',[2963 -211 590.8 450])
 axis off
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\UMAP_ClusterID.jpg'];
-% export_fig(ExportPath,'-r1200','-transparent')
+
 
 colorbar
 axis on
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\UMAP_ClusterID.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 %% Figure 3B
 
@@ -288,8 +286,7 @@ legend off
 xlabel('Log2 [EGF] ng/ml')
 ylabel('Mean signal (% of max)')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\Cluster_DoseResponse.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 % Plot Features of individual classes
@@ -369,8 +366,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\PopulationCluster_2.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 % Cellular Scale
 
@@ -383,8 +379,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\CellularCluster_2.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 % Subcellular scale
@@ -398,8 +393,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\TextureCluster_2.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 
@@ -414,8 +408,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\PopulationCluster_15.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 % Cellular Scale
 
@@ -428,8 +421,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\CellularCluster_15.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 % Subcellular scale
@@ -443,8 +435,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\TextureCluster_15.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 % Population Scale
@@ -458,8 +449,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\PopulationCluster_18.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 % Cellular Scale
 
@@ -472,8 +462,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\CellularCluster_18.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 % Subcellular scale
@@ -487,8 +476,7 @@ colormap(ScaleColorMap);
 colorbar
 axis image
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\TextureCluster_18.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 %% Figure 3C
 
@@ -578,13 +566,9 @@ xlim([-7.5 10.5])
 set(gcf,'position',[2963 -211 590.8 450])
 axis off
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\UMAP_EC50_pMEK.jpg'];
-% export_fig(ExportPath,'-r1200','-transparent')
-
 colorbar
 axis on
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\UMAP_EC50_pMEK.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 CurrentEC50 = StorageEC50{3,1};
@@ -600,13 +584,9 @@ xlim([-7.5 10.5])
 set(gcf,'position',[2963 -211 590.8 450])
 axis off
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\UMAP_EC50_pERK.jpg'];
-% export_fig(ExportPath,'-r1200','-transparent')
-
 colorbar
 axis on
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\UMAP_EC50_pERK.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 CurrentEC50 = StorageEC50{6,1};
@@ -622,13 +602,9 @@ xlim([-7.5 10.5])
 set(gcf,'position',[2963 -211 590.8 450])
 axis off
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\UMAP_EC50_pMTOR.jpg'];
-% export_fig(ExportPath,'-r1200','-transparent')
-
 colorbar
 axis on
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\UMAP_EC50_pMTOR.pdf'];
-% export_fig(ExportPath,'-painters')
+
 
 
 PlotIndex = 1;
@@ -672,10 +648,8 @@ yticklabels({'pS6','pMEK','pRSK','pMTOR','pGSK3B','pAKT','pERK','FoxO3a','FoxO1'
 text(3,10,'No Saturation in Dose Response')
 colorbar
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_3\Raw_Figures\Violinplot_EC50.pdf'];
-% export_fig(ExportPath,'-painters')
 
-%% Figure 3D
+%% Figure 3D - Old
 
 % Assembled in Adobe Illustrator; ai. can be shared - Raw plots used are generated by the following
 load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\DoseProbabilityWithoutOne_Complete.mat');
@@ -753,7 +727,7 @@ ylabel('Probability')
 xlabel('[EGF] received ng/ml')
 
 
-%% Figure 3E
+%% Figure 3E - Old
 
 load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\DoseProbabilityWithoutOne_Complete.mat');
 
@@ -807,3 +781,1279 @@ xlabel('False positive rate')
 leg = legend('Unimodal','Unimodal contextual','Multimodal','Multimodal contextual','Cellular state only');
 axis square
 set(leg,'position',[0.5286 0.1271 0.2882 0.1655])
+
+
+
+%% Figure 3D and 3E - New
+
+%%% To use different type of classifiers change fitcecoc into the different matlab function (e.g. fitcnn) %%% 
+
+%StorageProbability = cell(5,1);
+% StorageGroupIndex = cell(5,1);
+% 
+% HighWells = [1,2,3];
+% HighMiddleWells = [4,5,6];
+% MiddleWells = [7,8,9];
+% LowWells = [10,19,20];
+% NoneWells = [13,14,15];
+% CombinationWell = [HighWells,HighMiddleWells,MiddleWells,LowWells,NoneWells];
+% 
+% NumIterations = 160;
+% %NumTestCells = 20000;
+% %NumModelCells = 40000;
+% 
+% LikelihoodStorageHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% 
+% OriginalIndex = find(ismember(LinearIndex,CombinationWell));
+% 
+% 
+% parfor CurrentIteration = 1:NumIterations
+%     Rand1 = randi(3);
+%     Rand2 = randi(3);
+%     Rand3 = randi(3);
+%     Rand4 = randi(3);
+%     Rand5 = randi(3);
+%     
+%     Diff1 = setdiff(1:3,Rand1);
+%     Diff2 = setdiff(1:3,Rand2);
+%     Diff3 = setdiff(1:3,Rand3);
+%     Diff4 = setdiff(1:3,Rand4);
+%     Diff5 = setdiff(1:3,Rand5);
+%     
+%     TestWells = [HighWells(Rand1),HighMiddleWells(Rand2),MiddleWells(Rand3),LowWells(Rand4),NoneWells(Rand5)];   
+%     ModelWells = [HighWells(Diff1),HighMiddleWells(Diff2),MiddleWells(Diff3),LowWells(Diff4),NoneWells(Diff5)];  
+%     
+%     % Everything with Random already...  
+%     ModelIndex = [find(ismember(LinearIndex,ModelWells(1:2)));...
+%         find(ismember(LinearIndex,ModelWells(3:4)));...
+%         find(ismember(LinearIndex,ModelWells(5:6)));...
+%         find(ismember(LinearIndex,ModelWells(7:8)));...
+%         find(ismember(LinearIndex,ModelWells(9:10)))];
+%     
+%     GroupIndexModel = [repmat(5,size(find(ismember(LinearIndex,ModelWells(1:2))),1),1);repmat(4,size(find(ismember(LinearIndex,ModelWells(3:4))),1),1);repmat(3,size(find(ismember(LinearIndex,ModelWells(5:6))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,ModelWells(7:8))),1),1);repmat(1,size(find(ismember(LinearIndex,ModelWells(9:10))),1),1)];
+%     
+%     TestIndex = [find(ismember(LinearIndex,TestWells(1)));...
+%         find(ismember(LinearIndex,TestWells(2)));...
+%         find(ismember(LinearIndex,TestWells(3)));...
+%         find(ismember(LinearIndex,TestWells(4)));...
+%         find(ismember(LinearIndex,TestWells(5)))];
+%     
+%     GroupIndexTest = [repmat(5,size(find(ismember(LinearIndex,TestWells(1))),1),1);repmat(4,size(find(ismember(LinearIndex,TestWells(2))),1),1);repmat(3,size(find(ismember(LinearIndex,TestWells(3))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,TestWells(4))),1),1);repmat(1,size(find(ismember(LinearIndex,TestWells(5))),1),1)];
+%       
+%     % Get Index of RandomCells balanced classes;
+%     RandomIndexModel = [datasample(find(GroupIndexModel == 5),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 4),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 3),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 2),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 1),2700,'Replace',false)];
+%     
+%     RandomIndexTest = [datasample(find(GroupIndexTest == 5),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 4),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 3),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 2),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 1),1400,'Replace',false)];
+%     
+%     
+%     %RandomIndexModel = randsample(1:size(ModelIndex,1),NumModelCells,false);
+%     %RandomIndexTest = randsample(1:size(TestIndex,1),NumTestCells,false);  
+%     
+%     MDL = fitcecoc(LogResponseData(ModelIndex(RandomIndexModel),3),GroupIndexModel(RandomIndexModel),'CrossVal','on','Holdout',0.2);
+%     [PredictedLabel,PosteriorClass] = kfoldPredict(MDL);
+%     
+%     % FINE TILL HERE
+%     
+%     [SortedIndex,SortOrder] = sort(ModelIndex(RandomIndexModel),'ascend');
+%     SortedPosteriorClass = PosteriorClass(SortOrder,:);
+%     
+%     PartOfWhole = ismember(OriginalIndex,SortedIndex);
+%     
+%     IntermediateHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     
+%     IntermediateHigh(PartOfWhole,1) = SortedPosteriorClass(:,5); 
+%     IntermediateHighMiddle(PartOfWhole,1) = SortedPosteriorClass(:,4); 
+%     IntermediateMiddle(PartOfWhole,1) = SortedPosteriorClass(:,3); 
+%     IntermediateLow(PartOfWhole,1) = SortedPosteriorClass(:,2); 
+%     IntermediateNone(PartOfWhole,1) = SortedPosteriorClass(:,1);
+%     
+%     
+%     LikelihoodStorageHigh(:,CurrentIteration) = IntermediateHigh; 
+%     LikelihoodStorageHighMiddle(:,CurrentIteration) = IntermediateHighMiddle; 
+%     LikelihoodStorageMiddle(:,CurrentIteration) = IntermediateMiddle; 
+%     LikelihoodStorageLow(:,CurrentIteration) = IntermediateLow; 
+%     LikelihoodStorageNone(:,CurrentIteration) = IntermediateNone; 
+% %     CurrentIteration
+% end
+% 
+% 
+% XV = [nanmean(LikelihoodStorageNone,2),nanmean(LikelihoodStorageLow,2),nanmean(LikelihoodStorageMiddle,2),nanmean(LikelihoodStorageHighMiddle,2),nanmean(LikelihoodStorageHigh,2)];
+% 
+% TrueIndex = [repmat(5,size(find(ismember(LinearIndex,CombinationWell(1:3))),1),1);repmat(4,size(find(ismember(LinearIndex,CombinationWell(4:6))),1),1);repmat(3,size(find(ismember(LinearIndex,CombinationWell(7:9))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(10))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(13))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(14))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(15))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(11))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(12))),1),1)];
+%     
+% StorageProbability{1,1} = XV;
+% StorageGroupIndex{1,1} = TrueIndex;
+% 
+% save('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\PosteriorProbabilityPairwise_EGF.mat','StorageProbability','StorageGroupIndex','-v7.3')
+% 
+% 1
+% 
+% % With Features
+% HighWells = [1,2,3];
+% HighMiddleWells = [4,5,6];
+% MiddleWells = [7,8,9];
+% LowWells = [10,19,20];
+% NoneWells = [13,14,15];
+% CombinationWell = [HighWells,HighMiddleWells,MiddleWells,LowWells,NoneWells];
+% 
+% 
+% LikelihoodStorageHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% 
+% 
+% parfor CurrentIteration = 1:NumIterations
+%     
+%     Rand1 = randi(3);
+%     Rand2 = randi(3);
+%     Rand3 = randi(3);
+%     Rand4 = randi(3);
+%     Rand5 = randi(3);
+%     
+%     Diff1 = setdiff(1:3,Rand1);
+%     Diff2 = setdiff(1:3,Rand2);
+%     Diff3 = setdiff(1:3,Rand3);
+%     Diff4 = setdiff(1:3,Rand4);
+%     Diff5 = setdiff(1:3,Rand5);
+%     
+%     TestWells = [HighWells(Rand1),HighMiddleWells(Rand2),MiddleWells(Rand3),LowWells(Rand4),NoneWells(Rand5)];   
+%     ModelWells = [HighWells(Diff1),HighMiddleWells(Diff2),MiddleWells(Diff3),LowWells(Diff4),NoneWells(Diff5)];  
+%     
+%     % Everything with Random already...  
+%     ModelIndex = [find(ismember(LinearIndex,ModelWells(1:2)));...
+%         find(ismember(LinearIndex,ModelWells(3:4)));...
+%         find(ismember(LinearIndex,ModelWells(5:6)));...
+%         find(ismember(LinearIndex,ModelWells(7:8)));...
+%         find(ismember(LinearIndex,ModelWells(9:10)))];
+%     
+%     GroupIndexModel = [repmat(5,size(find(ismember(LinearIndex,ModelWells(1:2))),1),1);repmat(4,size(find(ismember(LinearIndex,ModelWells(3:4))),1),1);repmat(3,size(find(ismember(LinearIndex,ModelWells(5:6))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,ModelWells(7:8))),1),1);repmat(1,size(find(ismember(LinearIndex,ModelWells(9:10))),1),1)];
+%     
+%     TestIndex = [find(ismember(LinearIndex,TestWells(1)));...
+%         find(ismember(LinearIndex,TestWells(2)));...
+%         find(ismember(LinearIndex,TestWells(3)));...
+%         find(ismember(LinearIndex,TestWells(4)));...
+%         find(ismember(LinearIndex,TestWells(5)))];
+%     
+%     GroupIndexTest = [repmat(5,size(find(ismember(LinearIndex,TestWells(1))),1),1);repmat(4,size(find(ismember(LinearIndex,TestWells(2))),1),1);repmat(3,size(find(ismember(LinearIndex,TestWells(3))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,TestWells(4))),1),1);repmat(1,size(find(ismember(LinearIndex,TestWells(5))),1),1)];
+%       
+%     % Get Index of RandomCells balanced classes;
+%     RandomIndexModel = [datasample(find(GroupIndexModel == 5),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 4),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 3),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 2),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 1),2700,'Replace',false)];
+%     
+%     RandomIndexTest = [datasample(find(GroupIndexTest == 5),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 4),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 3),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 2),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 1),1400,'Replace',false)];
+%     
+%     
+%     %RandomIndexModel = randsample(1:size(ModelIndex,1),NumModelCells,false);
+%     %RandomIndexTest = randsample(1:size(TestIndex,1),NumTestCells,false);  
+%    
+% 
+%     
+%     MDL = fitcecoc([LogResponseData(ModelIndex(RandomIndexModel),3),PCFeatureData(ModelIndex(RandomIndexModel),:)],GroupIndexModel(RandomIndexModel),'CrossVal','on','Holdout',0.2);
+%     [PredictedLabel,PosteriorClass] = kfoldPredict(MDL);
+%     
+%     % FINE TILL HERE
+%     
+%     [SortedIndex,SortOrder] = sort(ModelIndex(RandomIndexModel),'ascend');
+%     SortedPosteriorClass = PosteriorClass(SortOrder,:);
+%     
+%     PartOfWhole = ismember(OriginalIndex,SortedIndex);
+%     
+%     IntermediateHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     
+%     IntermediateHigh(PartOfWhole,1) = SortedPosteriorClass(:,5); 
+%     IntermediateHighMiddle(PartOfWhole,1) = SortedPosteriorClass(:,4); 
+%     IntermediateMiddle(PartOfWhole,1) = SortedPosteriorClass(:,3); 
+%     IntermediateLow(PartOfWhole,1) = SortedPosteriorClass(:,2); 
+%     IntermediateNone(PartOfWhole,1) = SortedPosteriorClass(:,1);
+%     
+%     
+%     LikelihoodStorageHigh(:,CurrentIteration) = IntermediateHigh; 
+%     LikelihoodStorageHighMiddle(:,CurrentIteration) = IntermediateHighMiddle; 
+%     LikelihoodStorageMiddle(:,CurrentIteration) = IntermediateMiddle; 
+%     LikelihoodStorageLow(:,CurrentIteration) = IntermediateLow; 
+%     LikelihoodStorageNone(:,CurrentIteration) = IntermediateNone; 
+% %     CurrentIteration
+% end
+% 
+% 2
+% XV = [nanmean(LikelihoodStorageNone,2),nanmean(LikelihoodStorageLow,2),nanmean(LikelihoodStorageMiddle,2),nanmean(LikelihoodStorageHighMiddle,2),nanmean(LikelihoodStorageHigh,2)];
+% 
+% TrueIndex = [repmat(5,size(find(ismember(LinearIndex,CombinationWell(1:3))),1),1);repmat(4,size(find(ismember(LinearIndex,CombinationWell(4:6))),1),1);repmat(3,size(find(ismember(LinearIndex,CombinationWell(7:9))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(10))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(13))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(14))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(15))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(11))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(12))),1),1)];
+% 
+% StorageProbability{2,1} = XV;
+% StorageGroupIndex{2,1} = TrueIndex;
+% 
+% save('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\PosteriorProbabilityPairwise_EGF.mat','StorageProbability','StorageGroupIndex','-v7.3')
+% 
+% % Only Response Network
+% HighWells = [1,2,3];
+% HighMiddleWells = [4,5,6];
+% MiddleWells = [7,8,9];
+% LowWells = [10,19,20];
+% NoneWells = [13,14,15];
+% CombinationWell = [HighWells,HighMiddleWells,MiddleWells,LowWells,NoneWells];
+% 
+% 
+% FavoriteStains = [18,168,3,123,153,108,33,61,91,78];
+% 
+% LikelihoodStorageHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% 
+% 
+% parfor CurrentIteration = 1:NumIterations
+%     
+%    Rand1 = randi(3);
+%     Rand2 = randi(3);
+%     Rand3 = randi(3);
+%     Rand4 = randi(3);
+%     Rand5 = randi(3);
+%     
+%     Diff1 = setdiff(1:3,Rand1);
+%     Diff2 = setdiff(1:3,Rand2);
+%     Diff3 = setdiff(1:3,Rand3);
+%     Diff4 = setdiff(1:3,Rand4);
+%     Diff5 = setdiff(1:3,Rand5);
+%     
+%     TestWells = [HighWells(Rand1),HighMiddleWells(Rand2),MiddleWells(Rand3),LowWells(Rand4),NoneWells(Rand5)];   
+%     ModelWells = [HighWells(Diff1),HighMiddleWells(Diff2),MiddleWells(Diff3),LowWells(Diff4),NoneWells(Diff5)];  
+%     
+%     % Everything with Random already...  
+%     ModelIndex = [find(ismember(LinearIndex,ModelWells(1:2)));...
+%         find(ismember(LinearIndex,ModelWells(3:4)));...
+%         find(ismember(LinearIndex,ModelWells(5:6)));...
+%         find(ismember(LinearIndex,ModelWells(7:8)));...
+%         find(ismember(LinearIndex,ModelWells(9:10)))];
+%     
+%     GroupIndexModel = [repmat(5,size(find(ismember(LinearIndex,ModelWells(1:2))),1),1);repmat(4,size(find(ismember(LinearIndex,ModelWells(3:4))),1),1);repmat(3,size(find(ismember(LinearIndex,ModelWells(5:6))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,ModelWells(7:8))),1),1);repmat(1,size(find(ismember(LinearIndex,ModelWells(9:10))),1),1)];
+%     
+%     TestIndex = [find(ismember(LinearIndex,TestWells(1)));...
+%         find(ismember(LinearIndex,TestWells(2)));...
+%         find(ismember(LinearIndex,TestWells(3)));...
+%         find(ismember(LinearIndex,TestWells(4)));...
+%         find(ismember(LinearIndex,TestWells(5)))];
+%     
+%     GroupIndexTest = [repmat(5,size(find(ismember(LinearIndex,TestWells(1))),1),1);repmat(4,size(find(ismember(LinearIndex,TestWells(2))),1),1);repmat(3,size(find(ismember(LinearIndex,TestWells(3))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,TestWells(4))),1),1);repmat(1,size(find(ismember(LinearIndex,TestWells(5))),1),1)];
+%       
+%     % Get Index of RandomCells balanced classes;
+%     RandomIndexModel = [datasample(find(GroupIndexModel == 5),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 4),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 3),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 2),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 1),2700,'Replace',false)];
+%     
+%     RandomIndexTest = [datasample(find(GroupIndexTest == 5),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 4),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 3),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 2),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 1),1400,'Replace',false)];
+%     
+%     
+%     %RandomIndexModel = randsample(1:size(ModelIndex,1),NumModelCells,false);
+%     %RandomIndexTest = randsample(1:size(TestIndex,1),NumTestCells,false);  
+%     
+%     
+%     MDL = fitcecoc([LogResponseData(ModelIndex(RandomIndexModel),FavoriteStains)],GroupIndexModel(RandomIndexModel),'CrossVal','on','Holdout',0.2);
+%     [PredictedLabel,PosteriorClass] = kfoldPredict(MDL);
+%     
+%     % FINE TILL HERE
+%     
+%     [SortedIndex,SortOrder] = sort(ModelIndex(RandomIndexModel),'ascend');
+%     SortedPosteriorClass = PosteriorClass(SortOrder,:);
+%     
+%     PartOfWhole = ismember(OriginalIndex,SortedIndex);
+%     
+%     IntermediateHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     
+%     IntermediateHigh(PartOfWhole,1) = SortedPosteriorClass(:,5); 
+%     IntermediateHighMiddle(PartOfWhole,1) = SortedPosteriorClass(:,4); 
+%     IntermediateMiddle(PartOfWhole,1) = SortedPosteriorClass(:,3); 
+%     IntermediateLow(PartOfWhole,1) = SortedPosteriorClass(:,2); 
+%     IntermediateNone(PartOfWhole,1) = SortedPosteriorClass(:,1);
+%     
+%     
+%     LikelihoodStorageHigh(:,CurrentIteration) = IntermediateHigh; 
+%     LikelihoodStorageHighMiddle(:,CurrentIteration) = IntermediateHighMiddle; 
+%     LikelihoodStorageMiddle(:,CurrentIteration) = IntermediateMiddle; 
+%     LikelihoodStorageLow(:,CurrentIteration) = IntermediateLow; 
+%     LikelihoodStorageNone(:,CurrentIteration) = IntermediateNone; 
+% %     CurrentIteration
+% end
+% 
+% 3
+% 
+% XV = [nanmean(LikelihoodStorageNone,2),nanmean(LikelihoodStorageLow,2),nanmean(LikelihoodStorageMiddle,2),nanmean(LikelihoodStorageHighMiddle,2),nanmean(LikelihoodStorageHigh,2)];
+% 
+% TrueIndex = [repmat(5,size(find(ismember(LinearIndex,CombinationWell(1:3))),1),1);repmat(4,size(find(ismember(LinearIndex,CombinationWell(4:6))),1),1);repmat(3,size(find(ismember(LinearIndex,CombinationWell(7:9))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(10))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(13))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(14))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(15))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(11))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(12))),1),1)];
+% 
+% 
+% StorageProbability{3,1} = XV;
+% StorageGroupIndex{3,1} = TrueIndex;
+% 
+% save('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\PosteriorProbabilityPairwise_EGF.mat','StorageProbability','StorageGroupIndex','-v7.3')
+% 
+% % With Features and all Responses
+% HighWells = [1,2,3];
+% HighMiddleWells = [4,5,6];
+% MiddleWells = [7,8,9];
+% LowWells = [10,19,20];
+% NoneWells = [13,14,15];
+% CombinationWell = [HighWells,HighMiddleWells,MiddleWells,LowWells,NoneWells];
+% 
+% 
+% FavoriteStains = [18,168,3,123,153,108,33,61,91,78];
+% 
+% LikelihoodStorageHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% 
+% 
+% parfor CurrentIteration = 1:NumIterations
+%     
+%     Rand1 = randi(3);
+%     Rand2 = randi(3);
+%     Rand3 = randi(3);
+%     Rand4 = randi(3);
+%     Rand5 = randi(3);
+%     
+%     Diff1 = setdiff(1:3,Rand1);
+%     Diff2 = setdiff(1:3,Rand2);
+%     Diff3 = setdiff(1:3,Rand3);
+%     Diff4 = setdiff(1:3,Rand4);
+%     Diff5 = setdiff(1:3,Rand5);
+%     
+%     TestWells = [HighWells(Rand1),HighMiddleWells(Rand2),MiddleWells(Rand3),LowWells(Rand4),NoneWells(Rand5)];   
+%     ModelWells = [HighWells(Diff1),HighMiddleWells(Diff2),MiddleWells(Diff3),LowWells(Diff4),NoneWells(Diff5)];  
+%     
+%     % Everything with Random already...  
+%     ModelIndex = [find(ismember(LinearIndex,ModelWells(1:2)));...
+%         find(ismember(LinearIndex,ModelWells(3:4)));...
+%         find(ismember(LinearIndex,ModelWells(5:6)));...
+%         find(ismember(LinearIndex,ModelWells(7:8)));...
+%         find(ismember(LinearIndex,ModelWells(9:10)))];
+%     
+%     GroupIndexModel = [repmat(5,size(find(ismember(LinearIndex,ModelWells(1:2))),1),1);repmat(4,size(find(ismember(LinearIndex,ModelWells(3:4))),1),1);repmat(3,size(find(ismember(LinearIndex,ModelWells(5:6))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,ModelWells(7:8))),1),1);repmat(1,size(find(ismember(LinearIndex,ModelWells(9:10))),1),1)];
+%     
+%     TestIndex = [find(ismember(LinearIndex,TestWells(1)));...
+%         find(ismember(LinearIndex,TestWells(2)));...
+%         find(ismember(LinearIndex,TestWells(3)));...
+%         find(ismember(LinearIndex,TestWells(4)));...
+%         find(ismember(LinearIndex,TestWells(5)))];
+%     
+%     GroupIndexTest = [repmat(5,size(find(ismember(LinearIndex,TestWells(1))),1),1);repmat(4,size(find(ismember(LinearIndex,TestWells(2))),1),1);repmat(3,size(find(ismember(LinearIndex,TestWells(3))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,TestWells(4))),1),1);repmat(1,size(find(ismember(LinearIndex,TestWells(5))),1),1)];
+%       
+%     % Get Index of RandomCells balanced classes;
+%     RandomIndexModel = [datasample(find(GroupIndexModel == 5),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 4),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 3),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 2),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 1),2700,'Replace',false)];
+%     
+%     RandomIndexTest = [datasample(find(GroupIndexTest == 5),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 4),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 3),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 2),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 1),1400,'Replace',false)];
+%     
+%     
+%     %RandomIndexModel = randsample(1:size(ModelIndex,1),NumModelCells,false);
+%     %RandomIndexTest = randsample(1:size(TestIndex,1),NumTestCells,false);  
+%     
+%     
+%     MDL = fitcecoc([LogResponseData(ModelIndex(RandomIndexModel),FavoriteStains),PCFeatureData(ModelIndex(RandomIndexModel),:)],GroupIndexModel(RandomIndexModel),'CrossVal','on','Holdout',0.2);
+%     [PredictedLabel,PosteriorClass] = kfoldPredict(MDL);
+%     
+%     % FINE TILL HERE
+%     
+%     [SortedIndex,SortOrder] = sort(ModelIndex(RandomIndexModel),'ascend');
+%     SortedPosteriorClass = PosteriorClass(SortOrder,:);
+%     
+%     PartOfWhole = ismember(OriginalIndex,SortedIndex);
+%     
+%     IntermediateHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     
+%     IntermediateHigh(PartOfWhole,1) = SortedPosteriorClass(:,5); 
+%     IntermediateHighMiddle(PartOfWhole,1) = SortedPosteriorClass(:,4); 
+%     IntermediateMiddle(PartOfWhole,1) = SortedPosteriorClass(:,3); 
+%     IntermediateLow(PartOfWhole,1) = SortedPosteriorClass(:,2); 
+%     IntermediateNone(PartOfWhole,1) = SortedPosteriorClass(:,1);
+%     
+%     
+%     LikelihoodStorageHigh(:,CurrentIteration) = IntermediateHigh; 
+%     LikelihoodStorageHighMiddle(:,CurrentIteration) = IntermediateHighMiddle; 
+%     LikelihoodStorageMiddle(:,CurrentIteration) = IntermediateMiddle; 
+%     LikelihoodStorageLow(:,CurrentIteration) = IntermediateLow; 
+%     LikelihoodStorageNone(:,CurrentIteration) = IntermediateNone; 
+% %     CurrentIteration
+% end
+% 
+% 4
+% 
+% XV = [nanmean(LikelihoodStorageNone,2),nanmean(LikelihoodStorageLow,2),nanmean(LikelihoodStorageMiddle,2),nanmean(LikelihoodStorageHighMiddle,2),nanmean(LikelihoodStorageHigh,2)];
+% 
+% TrueIndex = [repmat(5,size(find(ismember(LinearIndex,CombinationWell(1:3))),1),1);repmat(4,size(find(ismember(LinearIndex,CombinationWell(4:6))),1),1);repmat(3,size(find(ismember(LinearIndex,CombinationWell(7:9))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(10))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(13))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(14))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(15))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(11))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(12))),1),1)];
+% 
+% 
+% StorageProbability{4,1} = XV;
+% StorageGroupIndex{4,1} = TrueIndex;
+% 
+% save('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\PosteriorProbabilityPairwise_EGF.mat','StorageProbability','StorageGroupIndex','-v7.3')
+% 
+% 
+% % Only Features
+% 
+% 
+% % With Features
+% HighWells = [1,2,3];
+% HighMiddleWells = [4,5,6];
+% MiddleWells = [7,8,9];
+% LowWells = [10,19,20];
+% NoneWells = [13,14,15];
+% CombinationWell = [HighWells,HighMiddleWells,MiddleWells,LowWells,NoneWells];
+% 
+% 
+% LikelihoodStorageHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% 
+% 
+% parfor CurrentIteration = 1:NumIterations
+%     
+%     Rand1 = randi(3);
+%     Rand2 = randi(3);
+%     Rand3 = randi(3);
+%     Rand4 = randi(3);
+%     Rand5 = randi(3);
+%     
+%     Diff1 = setdiff(1:3,Rand1);
+%     Diff2 = setdiff(1:3,Rand2);
+%     Diff3 = setdiff(1:3,Rand3);
+%     Diff4 = setdiff(1:3,Rand4);
+%     Diff5 = setdiff(1:3,Rand5);
+%     
+%     TestWells = [HighWells(Rand1),HighMiddleWells(Rand2),MiddleWells(Rand3),LowWells(Rand4),NoneWells(Rand5)];   
+%     ModelWells = [HighWells(Diff1),HighMiddleWells(Diff2),MiddleWells(Diff3),LowWells(Diff4),NoneWells(Diff5)];  
+%     
+%     % Everything with Random already...  
+%     ModelIndex = [find(ismember(LinearIndex,ModelWells(1:2)));...
+%         find(ismember(LinearIndex,ModelWells(3:4)));...
+%         find(ismember(LinearIndex,ModelWells(5:6)));...
+%         find(ismember(LinearIndex,ModelWells(7:8)));...
+%         find(ismember(LinearIndex,ModelWells(9:10)))];
+%     
+%     GroupIndexModel = [repmat(5,size(find(ismember(LinearIndex,ModelWells(1:2))),1),1);repmat(4,size(find(ismember(LinearIndex,ModelWells(3:4))),1),1);repmat(3,size(find(ismember(LinearIndex,ModelWells(5:6))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,ModelWells(7:8))),1),1);repmat(1,size(find(ismember(LinearIndex,ModelWells(9:10))),1),1)];
+%     
+%     TestIndex = [find(ismember(LinearIndex,TestWells(1)));...
+%         find(ismember(LinearIndex,TestWells(2)));...
+%         find(ismember(LinearIndex,TestWells(3)));...
+%         find(ismember(LinearIndex,TestWells(4)));...
+%         find(ismember(LinearIndex,TestWells(5)))];
+%     
+%     GroupIndexTest = [repmat(5,size(find(ismember(LinearIndex,TestWells(1))),1),1);repmat(4,size(find(ismember(LinearIndex,TestWells(2))),1),1);repmat(3,size(find(ismember(LinearIndex,TestWells(3))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,TestWells(4))),1),1);repmat(1,size(find(ismember(LinearIndex,TestWells(5))),1),1)];
+%       
+%     % Get Index of RandomCells balanced classes;
+%     RandomIndexModel = [datasample(find(GroupIndexModel == 5),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 4),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 3),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 2),2700,'Replace',false);...
+%         datasample(find(GroupIndexModel == 1),2700,'Replace',false)];
+%     
+%     RandomIndexTest = [datasample(find(GroupIndexTest == 5),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 4),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 3),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 2),1400,'Replace',false);...
+%         datasample(find(GroupIndexTest == 1),1400,'Replace',false)];
+%     
+%     
+%     %RandomIndexModel = randsample(1:size(ModelIndex,1),NumModelCells,false);
+%     %RandomIndexTest = randsample(1:size(TestIndex,1),NumTestCells,false);  
+%     
+%     MDL = fitcecoc([PCFeatureData(ModelIndex(RandomIndexModel),:)],GroupIndexModel(RandomIndexModel),'CrossVal','on','Holdout',0.2);
+%     [PredictedLabel,PosteriorClass] = kfoldPredict(MDL);
+%     
+%     % FINE TILL HERE
+%     
+%     [SortedIndex,SortOrder] = sort(ModelIndex(RandomIndexModel),'ascend');
+%     SortedPosteriorClass = PosteriorClass(SortOrder,:);
+%     
+%     PartOfWhole = ismember(OriginalIndex,SortedIndex);
+%     
+%     IntermediateHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     IntermediateNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%     
+%     IntermediateHigh(PartOfWhole,1) = SortedPosteriorClass(:,5); 
+%     IntermediateHighMiddle(PartOfWhole,1) = SortedPosteriorClass(:,4); 
+%     IntermediateMiddle(PartOfWhole,1) = SortedPosteriorClass(:,3); 
+%     IntermediateLow(PartOfWhole,1) = SortedPosteriorClass(:,2); 
+%     IntermediateNone(PartOfWhole,1) = SortedPosteriorClass(:,1);
+%     
+%     
+%     LikelihoodStorageHigh(:,CurrentIteration) = IntermediateHigh; 
+%     LikelihoodStorageHighMiddle(:,CurrentIteration) = IntermediateHighMiddle; 
+%     LikelihoodStorageMiddle(:,CurrentIteration) = IntermediateMiddle; 
+%     LikelihoodStorageLow(:,CurrentIteration) = IntermediateLow; 
+%     LikelihoodStorageNone(:,CurrentIteration) = IntermediateNone; 
+% %     CurrentIteration
+% end
+% 
+% 5
+% 
+% XV = [nanmean(LikelihoodStorageNone,2),nanmean(LikelihoodStorageLow,2),nanmean(LikelihoodStorageMiddle,2),nanmean(LikelihoodStorageHighMiddle,2),nanmean(LikelihoodStorageHigh,2)];
+% 
+% TrueIndex = [repmat(5,size(find(ismember(LinearIndex,CombinationWell(1:3))),1),1);repmat(4,size(find(ismember(LinearIndex,CombinationWell(4:6))),1),1);repmat(3,size(find(ismember(LinearIndex,CombinationWell(7:9))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(10))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(13))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(14))),1),1);...
+%     repmat(1,size(find(ismember(LinearIndex,CombinationWell(15))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(11))),1),1);...
+%     repmat(2,size(find(ismember(LinearIndex,CombinationWell(12))),1),1)];
+% 
+% StorageProbability{5,1} = XV;
+% StorageGroupIndex{5,1} = TrueIndex;
+% 
+% save('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\PosteriorProbabilityPairwise_EGF.mat','StorageProbability','StorageGroupIndex','-v7.3')
+% 
+% StorageProbability = cell(10,1);
+% StorageGroupIndex = cell(10,1);
+% 
+% HighWells = [1,2,3];
+% HighMiddleWells = [4,5,6];
+% MiddleWells = [7,8,9];
+% LowWells = [10,19,20];
+% NoneWells = [13,14,15];
+% CombinationWell = [HighWells,HighMiddleWells,MiddleWells,LowWells,NoneWells];
+% 
+% 
+% LikelihoodStorageHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% 
+% OriginalIndex = find(ismember(LinearIndex,CombinationWell));
+% FavoriteStains = [18,168,3,123,153,108,33,91,61,78];
+% 
+% for CurrentStainIndex = 1:size(FavoriteStains,2)
+%     CurrentStain = FavoriteStains(1,CurrentStainIndex);
+%     parfor CurrentIteration = 1:NumIterations
+%         Rand1 = randi(3);
+%         Rand2 = randi(3);
+%         Rand3 = randi(3);
+%         Rand4 = randi(3);
+%         Rand5 = randi(3);
+%         
+%         Diff1 = setdiff(1:3,Rand1);
+%         Diff2 = setdiff(1:3,Rand2);
+%         Diff3 = setdiff(1:3,Rand3);
+%         Diff4 = setdiff(1:3,Rand4);
+%         Diff5 = setdiff(1:3,Rand5);
+%         
+%         TestWells = [HighWells(Rand1),HighMiddleWells(Rand2),MiddleWells(Rand3),LowWells(Rand4),NoneWells(Rand5)];
+%         ModelWells = [HighWells(Diff1),HighMiddleWells(Diff2),MiddleWells(Diff3),LowWells(Diff4),NoneWells(Diff5)];
+%         
+%         % Everything with Random already...
+%         ModelIndex = [find(ismember(LinearIndex,ModelWells(1:2)));...
+%             find(ismember(LinearIndex,ModelWells(3:4)));...
+%             find(ismember(LinearIndex,ModelWells(5:6)));...
+%             find(ismember(LinearIndex,ModelWells(7:8)));...
+%             find(ismember(LinearIndex,ModelWells(9:10)))];
+%         
+%         GroupIndexModel = [repmat(5,size(find(ismember(LinearIndex,ModelWells(1:2))),1),1);repmat(4,size(find(ismember(LinearIndex,ModelWells(3:4))),1),1);repmat(3,size(find(ismember(LinearIndex,ModelWells(5:6))),1),1);...
+%             repmat(2,size(find(ismember(LinearIndex,ModelWells(7:8))),1),1);repmat(1,size(find(ismember(LinearIndex,ModelWells(9:10))),1),1)];
+%         
+%         TestIndex = [find(ismember(LinearIndex,TestWells(1)));...
+%             find(ismember(LinearIndex,TestWells(2)));...
+%             find(ismember(LinearIndex,TestWells(3)));...
+%             find(ismember(LinearIndex,TestWells(4)));...
+%             find(ismember(LinearIndex,TestWells(5)))];
+%         
+%         GroupIndexTest = [repmat(5,size(find(ismember(LinearIndex,TestWells(1))),1),1);repmat(4,size(find(ismember(LinearIndex,TestWells(2))),1),1);repmat(3,size(find(ismember(LinearIndex,TestWells(3))),1),1);...
+%             repmat(2,size(find(ismember(LinearIndex,TestWells(4))),1),1);repmat(1,size(find(ismember(LinearIndex,TestWells(5))),1),1)];
+%         
+%         % Get Index of RandomCells balanced classes;
+%         RandomIndexModel = [datasample(find(GroupIndexModel == 5),2700,'Replace',false);...
+%             datasample(find(GroupIndexModel == 4),2700,'Replace',false);...
+%             datasample(find(GroupIndexModel == 3),2700,'Replace',false);...
+%             datasample(find(GroupIndexModel == 2),2700,'Replace',false);...
+%             datasample(find(GroupIndexModel == 1),2700,'Replace',false)];
+%         
+%         RandomIndexTest = [datasample(find(GroupIndexTest == 5),1400,'Replace',false);...
+%             datasample(find(GroupIndexTest == 4),1400,'Replace',false);...
+%             datasample(find(GroupIndexTest == 3),1400,'Replace',false);...
+%             datasample(find(GroupIndexTest == 2),1400,'Replace',false);...
+%             datasample(find(GroupIndexTest == 1),1400,'Replace',false)];
+%         
+%         
+%         %RandomIndexModel = randsample(1:size(ModelIndex,1),NumModelCells,false);
+%         %RandomIndexTest = randsample(1:size(TestIndex,1),NumTestCells,false);
+%         
+% 
+%         
+%         MDL = fitcecoc(LogResponseData(ModelIndex(RandomIndexModel),CurrentStain),GroupIndexModel(RandomIndexModel),'CrossVal','on','Holdout',0.2);
+%         [PredictedLabel,PosteriorClass] = kfoldPredict(MDL);
+%     
+%     % FINE TILL HERE
+%     
+%     [SortedIndex,SortOrder] = sort(ModelIndex(RandomIndexModel),'ascend');
+%     SortedPosteriorClass = PosteriorClass(SortOrder,:);
+%         
+%         PartOfWhole = ismember(OriginalIndex,SortedIndex);
+%         
+%         IntermediateHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         IntermediateHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         IntermediateMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         IntermediateLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         IntermediateNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         
+%         IntermediateHigh(PartOfWhole,1) = SortedPosteriorClass(:,5);
+%         IntermediateHighMiddle(PartOfWhole,1) = SortedPosteriorClass(:,4);
+%         IntermediateMiddle(PartOfWhole,1) = SortedPosteriorClass(:,3);
+%         IntermediateLow(PartOfWhole,1) = SortedPosteriorClass(:,2);
+%         IntermediateNone(PartOfWhole,1) = SortedPosteriorClass(:,1);
+%         
+%         
+%         LikelihoodStorageHigh(:,CurrentIteration) = IntermediateHigh;
+%         LikelihoodStorageHighMiddle(:,CurrentIteration) = IntermediateHighMiddle;
+%         LikelihoodStorageMiddle(:,CurrentIteration) = IntermediateMiddle;
+%         LikelihoodStorageLow(:,CurrentIteration) = IntermediateLow;
+%         LikelihoodStorageNone(:,CurrentIteration) = IntermediateNone;
+% %         CurrentIteration
+%     end
+%     
+%     
+%     XV = [nanmean(LikelihoodStorageNone,2),nanmean(LikelihoodStorageLow,2),nanmean(LikelihoodStorageMiddle,2),nanmean(LikelihoodStorageHighMiddle,2),nanmean(LikelihoodStorageHigh,2)];
+%     
+%     TrueIndex = [repmat(5,size(find(ismember(LinearIndex,CombinationWell(1:3))),1),1);repmat(4,size(find(ismember(LinearIndex,CombinationWell(4:6))),1),1);repmat(3,size(find(ismember(LinearIndex,CombinationWell(7:9))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,CombinationWell(10))),1),1);...
+%         repmat(1,size(find(ismember(LinearIndex,CombinationWell(13))),1),1);...
+%         repmat(1,size(find(ismember(LinearIndex,CombinationWell(14))),1),1);...
+%         repmat(1,size(find(ismember(LinearIndex,CombinationWell(15))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,CombinationWell(11))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,CombinationWell(12))),1),1)];
+%     
+%     StorageProbability{CurrentStainIndex,1} = XV;
+%     StorageGroupIndex{CurrentStainIndex,1} = TrueIndex;
+%     
+% end
+% 
+% save('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\PosteriorProbabilityPairwise_EGF.mat','StorageProbability','StorageGroupIndex','-v7.3')
+% 
+% 6
+% 
+% StorageProbability = cell(10,1);
+% StorageGroupIndex = cell(10,1);
+% 
+% HighWells = [1,2,3];
+% HighMiddleWells = [4,5,6];
+% MiddleWells = [7,8,9];
+% LowWells = [10,19,20];
+% NoneWells = [13,14,15];
+% CombinationWell = [HighWells,HighMiddleWells,MiddleWells,LowWells,NoneWells];
+% 
+% 
+% LikelihoodStorageHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% LikelihoodStorageNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),NumIterations);
+% 
+% OriginalIndex = find(ismember(LinearIndex,CombinationWell));
+% FavoriteStains = [18,168,3,123,153,108,33,91,61,78];
+% 
+% for CurrentStainIndex = 1:size(FavoriteStains,2)
+%     CurrentStain = FavoriteStains(1,CurrentStainIndex);
+%     parfor CurrentIteration = 1:NumIterations
+%         Rand1 = randi(3);
+%         Rand2 = randi(3);
+%         Rand3 = randi(3);
+%         Rand4 = randi(3);
+%         Rand5 = randi(3);
+%         
+%         Diff1 = setdiff(1:3,Rand1);
+%         Diff2 = setdiff(1:3,Rand2);
+%         Diff3 = setdiff(1:3,Rand3);
+%         Diff4 = setdiff(1:3,Rand4);
+%         Diff5 = setdiff(1:3,Rand5);
+%         
+%         TestWells = [HighWells(Rand1),HighMiddleWells(Rand2),MiddleWells(Rand3),LowWells(Rand4),NoneWells(Rand5)];
+%         ModelWells = [HighWells(Diff1),HighMiddleWells(Diff2),MiddleWells(Diff3),LowWells(Diff4),NoneWells(Diff5)];
+%         
+%         % Everything with Random already...
+%         ModelIndex = [find(ismember(LinearIndex,ModelWells(1:2)));...
+%             find(ismember(LinearIndex,ModelWells(3:4)));...
+%             find(ismember(LinearIndex,ModelWells(5:6)));...
+%             find(ismember(LinearIndex,ModelWells(7:8)));...
+%             find(ismember(LinearIndex,ModelWells(9:10)))];
+%         
+%         GroupIndexModel = [repmat(5,size(find(ismember(LinearIndex,ModelWells(1:2))),1),1);repmat(4,size(find(ismember(LinearIndex,ModelWells(3:4))),1),1);repmat(3,size(find(ismember(LinearIndex,ModelWells(5:6))),1),1);...
+%             repmat(2,size(find(ismember(LinearIndex,ModelWells(7:8))),1),1);repmat(1,size(find(ismember(LinearIndex,ModelWells(9:10))),1),1)];
+%         
+%         TestIndex = [find(ismember(LinearIndex,TestWells(1)));...
+%             find(ismember(LinearIndex,TestWells(2)));...
+%             find(ismember(LinearIndex,TestWells(3)));...
+%             find(ismember(LinearIndex,TestWells(4)));...
+%             find(ismember(LinearIndex,TestWells(5)))];
+%         
+%         GroupIndexTest = [repmat(5,size(find(ismember(LinearIndex,TestWells(1))),1),1);repmat(4,size(find(ismember(LinearIndex,TestWells(2))),1),1);repmat(3,size(find(ismember(LinearIndex,TestWells(3))),1),1);...
+%             repmat(2,size(find(ismember(LinearIndex,TestWells(4))),1),1);repmat(1,size(find(ismember(LinearIndex,TestWells(5))),1),1)];
+%         
+%         % Get Index of RandomCells balanced classes;
+%         RandomIndexModel = [datasample(find(GroupIndexModel == 5),2700,'Replace',false);...
+%             datasample(find(GroupIndexModel == 4),2700,'Replace',false);...
+%             datasample(find(GroupIndexModel == 3),2700,'Replace',false);...
+%             datasample(find(GroupIndexModel == 2),2700,'Replace',false);...
+%             datasample(find(GroupIndexModel == 1),2700,'Replace',false)];
+%         
+%         RandomIndexTest = [datasample(find(GroupIndexTest == 5),1400,'Replace',false);...
+%             datasample(find(GroupIndexTest == 4),1400,'Replace',false);...
+%             datasample(find(GroupIndexTest == 3),1400,'Replace',false);...
+%             datasample(find(GroupIndexTest == 2),1400,'Replace',false);...
+%             datasample(find(GroupIndexTest == 1),1400,'Replace',false)];
+%         
+%         
+%         %RandomIndexModel = randsample(1:size(ModelIndex,1),NumModelCells,false);
+%         %RandomIndexTest = randsample(1:size(TestIndex,1),NumTestCells,false);
+%         
+%         
+%         MDL = fitcecoc([LogResponseData(ModelIndex(RandomIndexModel),CurrentStain),PCFeatureData(ModelIndex(RandomIndexModel),:)],GroupIndexModel(RandomIndexModel),'CrossVal','on','Holdout',0.2);
+%         [PredictedLabel,PosteriorClass] = kfoldPredict(MDL);
+%     
+%     % FINE TILL HERE
+%     
+%     [SortedIndex,SortOrder] = sort(ModelIndex(RandomIndexModel),'ascend');
+%     SortedPosteriorClass = PosteriorClass(SortOrder,:);
+%         
+%         PartOfWhole = ismember(OriginalIndex,SortedIndex);
+%         
+%         IntermediateHigh = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         IntermediateHighMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         IntermediateMiddle = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         IntermediateLow = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         IntermediateNone = NaN(size(find(ismember(LinearIndex,CombinationWell)),1),1);
+%         
+%         IntermediateHigh(PartOfWhole,1) = SortedPosteriorClass(:,5);
+%         IntermediateHighMiddle(PartOfWhole,1) = SortedPosteriorClass(:,4);
+%         IntermediateMiddle(PartOfWhole,1) = SortedPosteriorClass(:,3);
+%         IntermediateLow(PartOfWhole,1) = SortedPosteriorClass(:,2);
+%         IntermediateNone(PartOfWhole,1) = SortedPosteriorClass(:,1);
+%         
+%         
+%         LikelihoodStorageHigh(:,CurrentIteration) = IntermediateHigh;
+%         LikelihoodStorageHighMiddle(:,CurrentIteration) = IntermediateHighMiddle;
+%         LikelihoodStorageMiddle(:,CurrentIteration) = IntermediateMiddle;
+%         LikelihoodStorageLow(:,CurrentIteration) = IntermediateLow;
+%         LikelihoodStorageNone(:,CurrentIteration) = IntermediateNone;
+% %         CurrentIteration
+%     end
+%     
+%     
+%     XV = [nanmean(LikelihoodStorageNone,2),nanmean(LikelihoodStorageLow,2),nanmean(LikelihoodStorageMiddle,2),nanmean(LikelihoodStorageHighMiddle,2),nanmean(LikelihoodStorageHigh,2)];
+%     
+%     TrueIndex = [repmat(5,size(find(ismember(LinearIndex,CombinationWell(1:3))),1),1);repmat(4,size(find(ismember(LinearIndex,CombinationWell(4:6))),1),1);repmat(3,size(find(ismember(LinearIndex,CombinationWell(7:9))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,CombinationWell(10))),1),1);...
+%         repmat(1,size(find(ismember(LinearIndex,CombinationWell(13))),1),1);...
+%         repmat(1,size(find(ismember(LinearIndex,CombinationWell(14))),1),1);...
+%         repmat(1,size(find(ismember(LinearIndex,CombinationWell(15))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,CombinationWell(11))),1),1);...
+%         repmat(2,size(find(ismember(LinearIndex,CombinationWell(12))),1),1)];
+%     
+%     StorageProbability{CurrentStainIndex,1} = XV;
+%     StorageGroupIndex{CurrentStainIndex,1} = TrueIndex;
+%     
+% end
+% 
+% 7
+% 
+% save('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\PosteriorProbabilityPairwise_EGF.mat','StorageProbability','StorageGroupIndex','-v7.3')
+
+
+load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\PosteriorProbabilityPairwise_EGF.mat');
+% Pairwise Unimodal non-contextual
+TrueIndex = StorageGroupIndex{1,1};
+XV = StorageProbability{1,1};
+[~,PredictedIndex] = max(XV,[],2);
+
+MinNumber = zeros(5,1);
+
+for CurrentClass = 1:5
+    MinNumber(CurrentClass,1) = numel(find(TrueIndex == CurrentClass));    
+end
+
+MinNumber = min(MinNumber);
+
+PairwiseComparison = zeros(5,5);
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    for CurrentCounterClass = 1:5
+        ClassTwo = find(TrueIndex == CurrentCounterClass);
+        RandomSampleTwo = datasample(ClassTwo,MinNumber,'replace',false);
+        TrueClassTwo = TrueIndex(RandomSampleTwo,1);
+        PredictedClassTwo = PredictedIndex(RandomSampleTwo,1);
+        TrueCalc = [TrueClassOne;TrueClassTwo];
+        PredictedCalc = [PredictedClassOne;PredictedClassTwo];
+        PairwiseComparison(CurrentClass,CurrentCounterClass) = mutualinfo(TrueCalc,PredictedCalc);        
+    end
+end
+
+PlotMatrix = [flipud(PairwiseComparison),zeros(5,1);zeros(1,6)];
+figure
+pcolor(PlotMatrix);
+caxis([0 log2(2)])
+axis image
+colormap(brewermap(500,'reds'));
+h = colorbar;
+set(get(h,'label'),'string','Decoding Information (bit)');
+xticks([1.5 2.5 3.5 4.5 5.5])
+yticks([1.5 2.5 3.5 4.5 5.5])
+xlabel('EGF (ng/ml)')
+ylabel('EGF (ng/ml)')
+xticklabels({'0','6.25','10','25','100'})
+yticklabels({'100','25','10','5','0'})
+
+title('Pairwise Non-contextual Unimodal perception');
+
+
+TrueIndexCalc = [];
+PredictedIndexCalc = [];
+
+ComparisonFull = zeros(5,1);
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    TrueIndexCalc = [TrueIndexCalc;TrueClassOne];
+    PredictedIndexCalc = [PredictedIndexCalc;PredictedClassOne];
+    
+    
+end
+
+ComparisonFull(2,1) =  mutualinfo(TrueIndexCalc,PredictedIndexCalc);    
+
+% Pairwise Unimodal non-contextual
+TrueIndex = StorageGroupIndex{2,1};
+XV = StorageProbability{2,1};
+[~,PredictedIndex] = max(XV,[],2);
+
+MinNumber = zeros(5,1);
+
+for CurrentClass = 1:5
+    MinNumber(CurrentClass,1) = numel(find(TrueIndex == CurrentClass));    
+end
+
+MinNumber = min(MinNumber);
+
+PairwiseComparison = zeros(5,5);
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    for CurrentCounterClass = 1:5
+        ClassTwo = find(TrueIndex == CurrentCounterClass);
+        RandomSampleTwo = datasample(ClassTwo,MinNumber,'replace',false);
+        TrueClassTwo = TrueIndex(RandomSampleTwo,1);
+        PredictedClassTwo = PredictedIndex(RandomSampleTwo,1);
+        TrueCalc = [TrueClassOne;TrueClassTwo];
+        PredictedCalc = [PredictedClassOne;PredictedClassTwo];
+        PairwiseComparison(CurrentClass,CurrentCounterClass) = mutualinfo(TrueCalc,PredictedCalc);        
+    end
+end
+
+PlotMatrix = [flipud(PairwiseComparison),zeros(5,1);zeros(1,6)];
+figure
+pcolor(PlotMatrix);
+caxis([0 log2(2)])
+axis image
+colormap(brewermap(500,'reds'));
+h = colorbar;
+set(get(h,'label'),'string','Decoding Information (bit)');
+xticks([1.5 2.5 3.5 4.5 5.5])
+yticks([1.5 2.5 3.5 4.5 5.5])
+xlabel('EGF (ng/ml)')
+ylabel('EGF (ng/ml)')
+xticklabels({'0','6.25','10','25','100'})
+yticklabels({'100','25','10','5','0'})
+
+title('Pairwise Contextual Unimodal perception');
+
+
+TrueIndexCalc = [];
+PredictedIndexCalc = [];
+
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    TrueIndexCalc = [TrueIndexCalc;TrueClassOne];
+    PredictedIndexCalc = [PredictedIndexCalc;PredictedClassOne];
+    
+    
+end
+
+ComparisonFull(3,1) =  mutualinfo(TrueIndexCalc,PredictedIndexCalc);  
+
+% Pairwise Unimodal non-contextual
+TrueIndex = StorageGroupIndex{3,1};
+XV = StorageProbability{3,1};
+[~,PredictedIndex] = max(XV,[],2);
+
+MinNumber = zeros(5,1);
+
+for CurrentClass = 1:5
+    MinNumber(CurrentClass,1) = numel(find(TrueIndex == CurrentClass));    
+end
+
+MinNumber = min(MinNumber);
+
+PairwiseComparison = zeros(5,5);
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    for CurrentCounterClass = 1:5
+        ClassTwo = find(TrueIndex == CurrentCounterClass);
+        RandomSampleTwo = datasample(ClassTwo,MinNumber,'replace',false);
+        TrueClassTwo = TrueIndex(RandomSampleTwo,1);
+        PredictedClassTwo = PredictedIndex(RandomSampleTwo,1);
+        TrueCalc = [TrueClassOne;TrueClassTwo];
+        PredictedCalc = [PredictedClassOne;PredictedClassTwo];
+        PairwiseComparison(CurrentClass,CurrentCounterClass) = mutualinfo(TrueCalc,PredictedCalc);        
+    end
+end
+
+PlotMatrix = [flipud(PairwiseComparison),zeros(5,1);zeros(1,6)];
+figure
+pcolor(PlotMatrix);
+caxis([0 log2(2)])
+axis image
+colormap(brewermap(500,'reds'));
+h = colorbar;
+set(get(h,'label'),'string','Decoding Information (bit)');
+xticks([1.5 2.5 3.5 4.5 5.5])
+yticks([1.5 2.5 3.5 4.5 5.5])
+xlabel('EGF (ng/ml)')
+ylabel('EGF (ng/ml)')
+xticklabels({'0','6.25','10','25','100'})
+yticklabels({'100','25','10','5','0'})
+
+
+title('Pairwise Non-contextual Multimodal perception');
+
+
+TrueIndexCalc = [];
+PredictedIndexCalc = [];
+
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    TrueIndexCalc = [TrueIndexCalc;TrueClassOne];
+    PredictedIndexCalc = [PredictedIndexCalc;PredictedClassOne];
+    
+    
+end
+
+ComparisonFull(4,1) =  mutualinfo(TrueIndexCalc,PredictedIndexCalc);  
+
+% Pairwise Unimodal non-contextual
+TrueIndex = StorageGroupIndex{4,1};
+XV = StorageProbability{4,1};
+[~,PredictedIndex] = max(XV,[],2);
+
+MinNumber = zeros(5,1);
+
+for CurrentClass = 1:5
+    MinNumber(CurrentClass,1) = numel(find(TrueIndex == CurrentClass));    
+end
+
+MinNumber = min(MinNumber);
+
+PairwiseComparison = zeros(5,5);
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    for CurrentCounterClass = 1:5
+        ClassTwo = find(TrueIndex == CurrentCounterClass);
+        RandomSampleTwo = datasample(ClassTwo,MinNumber,'replace',false);
+        TrueClassTwo = TrueIndex(RandomSampleTwo,1);
+        PredictedClassTwo = PredictedIndex(RandomSampleTwo,1);
+        TrueCalc = [TrueClassOne;TrueClassTwo];
+        PredictedCalc = [PredictedClassOne;PredictedClassTwo];
+        PairwiseComparison(CurrentClass,CurrentCounterClass) = mutualinfo(TrueCalc,PredictedCalc);        
+    end
+end
+
+PlotMatrix = [flipud(PairwiseComparison),zeros(5,1);zeros(1,6)];
+figure
+pcolor(PlotMatrix);
+caxis([0 log2(2)])
+axis image
+colormap(brewermap(500,'reds'));
+h = colorbar;
+set(get(h,'label'),'string','Decoding Information (bit)');
+xticks([1.5 2.5 3.5 4.5 5.5])
+yticks([1.5 2.5 3.5 4.5 5.5])
+xlabel('EGF (ng/ml)')
+ylabel('EGF (ng/ml)')
+xticklabels({'0','6.25','10','25','100'})
+yticklabels({'100','25','10','5','0'})
+
+
+title('Pairwise Contextual Multimodal perception');
+
+
+TrueIndexCalc = [];
+PredictedIndexCalc = [];
+
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    TrueIndexCalc = [TrueIndexCalc;TrueClassOne];
+    PredictedIndexCalc = [PredictedIndexCalc;PredictedClassOne];
+    
+    
+end
+
+ComparisonFull(5,1) =  mutualinfo(TrueIndexCalc,PredictedIndexCalc);  
+
+
+% Pairwise Unimodal non-contextual
+TrueIndex = StorageGroupIndex{5,1};
+XV = StorageProbability{5,1};
+[~,PredictedIndex] = max(XV,[],2);
+
+MinNumber = zeros(5,1);
+
+for CurrentClass = 1:5
+    MinNumber(CurrentClass,1) = numel(find(TrueIndex == CurrentClass));    
+end
+
+MinNumber = min(MinNumber);
+
+PairwiseComparison = zeros(5,5);
+
+for CurrentClass = 1:5
+    ClassOne = find(TrueIndex == CurrentClass);
+    RandomSampleOne = datasample(ClassOne,MinNumber,'replace',false);
+    TrueClassOne = TrueIndex(RandomSampleOne,1);
+    PredictedClassOne = PredictedIndex(RandomSampleOne,1);
+    for CurrentCounterClass = 1:5
+        ClassTwo = find(TrueIndex == CurrentCounterClass);
+        RandomSampleTwo = datasample(ClassTwo,MinNumber,'replace',false);
+        TrueClassTwo = TrueIndex(RandomSampleTwo,1);
+        PredictedClassTwo = PredictedIndex(RandomSampleTwo,1);
+        TrueCalc = [TrueClassOne;TrueClassTwo];
+        PredictedCalc = [PredictedClassOne;PredictedClassTwo];
+        PairwiseComparison(CurrentClass,CurrentCounterClass) = mutualinfo(TrueCalc,PredictedCalc);        
+    end
+end
+
+PlotMatrix = [flipud(PairwiseComparison),zeros(5,1);zeros(1,6)];
+figure
+pcolor(PlotMatrix);
+caxis([0 log2(2)])
+axis image
+colormap(brewermap(500,'reds'));
+h = colorbar;
+set(get(h,'label'),'string','Decoding Information (bit)');
+xticks([1.5 2.5 3.5 4.5 5.5])
+yticks([1.5 2.5 3.5 4.5 5.5])
+xlabel('EGF (ng/ml)')
+ylabel('EGF (ng/ml)')
+xticklabels({'0','6.25','10','25','100'})
+yticklabels({'100','25','10','5','0'})
+
+title('Pairwise Only Context');
+
+load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\MutualInformation_FullClassifier.mat');
+
+figure
+bar(FullDoseClassifier)
+ylim([0 log2(5)]);
+ylabel('Decoding Information (bit)')
+xticklabels({'Context','Uni-non','Uni-Cont','Multi-non','Multi-Cont'})
+
+
+%% Figure 3F - New
+
+% load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Data_3.mat')
+% addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\'));
+% javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
+% 
+% 
+% %%% To use different type of classifiers change fitctree into the different matlab function (e.g. fitcnn) %%% 
+% 
+% EGFStorage = {'0nM','0.78nM','3.9nM'};
+% DrugStorage = {'No.Drug','AKT.2','MEK.2','MEK.AKT.2','Cell.State'};
+% TimeStorage = {'5min'};
+% 
+% 
+% IndicatorIndex = 1;
+% ResponseStains = [3,40,70];
+% 
+% StoragePredicted = cell(5,1);
+% StorageTrue = cell(5,1);
+% StorageMutualInformation = zeros(6,1);
+% 
+% 
+% for CurrentDrug = 1:size(DrugStorage,2)
+%     ModelResponseData = [];
+%     ModelFeatureData = [];
+%     ModelIndex = [];
+%     for CurrentEGF = 1:size(EGFStorage,2)
+% 
+% 
+% 
+%         EGFString = EGFStorage{1,CurrentEGF};
+%         TimeString = TimeStorage{1,1};
+%         DrugString = DrugStorage{1,CurrentDrug};
+% 
+% 
+%         EGF = find(contains(ConditionNames,EGFString));
+%         Time = find(contains(ConditionNames,TimeString));
+%         Drug = find(contains(ConditionNames,DrugString));
+% 
+%         FirstI = intersect(EGF,Time);
+%         Wells = intersect(FirstI,Drug);
+% 
+%         NewWells = zeros(2,1);
+% 
+%         NewWells(1) = Wells(end-1);
+%         NewWells(2) = Wells(end);
+% 
+%         Wells = NewWells;
+% 
+%         WellIndex = find(ismember(LinearIndex,Wells));
+% 
+%         WellFeatureData = zscore(PCFeatureData(WellIndex,:));
+%         WellResponseData = log2(ResponseData(WellIndex,ResponseStains));
+% 
+%         ModelResponseData = [ModelResponseData;WellResponseData];
+%         ModelFeatureData = [ModelFeatureData;WellFeatureData];
+%         ModelIndex = [ModelIndex;repmat(CurrentEGF,numel(WellIndex),1)];
+%     end
+% 
+%     MDL = fitctree([ModelResponseData,ModelFeatureData],ModelIndex,'Kfold',3);
+%     PredictedClass = kfoldPredict(MDL);
+% 
+% 
+%     StoragePredicted{CurrentDrug,1} = PredictedClass;
+%     StorageTrue{CurrentDrug,1} = ModelIndex;
+%     
+%     
+%     StorageMutualInformation(CurrentDrug,1) = mutualinfo(PredictedClass,ModelIndex);
+% 
+% end
+% 
+% 
+% save('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\DoseClassifier_EGF_Drug.mat','StorageMutualInformation','-v7.3');
+
+load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\DoseClassifier_EGF_Drug.mat');
+
+figure
+bar(StorageMutualInformation)
+title('Perception in Presence of signaling inhibitors');
+yticks([0 log2(2) log2(3)])
+ylim([0 log2(3)])
+yticklabels({'log2(1)','log2(2)','log2(3)'});
+xticklabels({'DMSO','AKT inhib','MEK inhib','both inhib','DYRK3 inhib','Cell State only'})
+
