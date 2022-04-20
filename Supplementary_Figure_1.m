@@ -1,9 +1,9 @@
 %% load data 
-%load('C:\Paper_Data\WorkingData_7_2.mat');
-load('Z:\bkramer\190218_184A1_EGF\Processed_Data\WorkingData_7_7.mat')
-addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\'));
-javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
-load('Z:\bkramer\190218_184A1_EGF\Processed_Data\CubeHelixLong.mat');
+
+load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Data_1.mat')
+addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\'));
+javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
+
 
 %% Data description
 
@@ -229,7 +229,7 @@ plot(Eval,DensityTwo)
 xlim([8 11.3])
 ylim([0 1])
 
-
+%% Supplementary Figure 1F
 
 StorageDoseOverlap = cell(5,1);
 
