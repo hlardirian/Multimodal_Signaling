@@ -1,9 +1,8 @@
 %% load data 
-%load('C:\Paper_Data\WorkingData_7_2.mat');
+% Adjust path to wherever data and function folder is located
 load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Data_1.mat')
 addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\'));
 javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
-load('Z:\bkramer\190218_184A1_EGF\Processed_Data\CubeHelixLong.mat');
 load('Z:\bkramer\190218_184A1_EGF\Processed_Data\gistColorMap.mat');
 
 %% Data description

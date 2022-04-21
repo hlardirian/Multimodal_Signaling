@@ -1,9 +1,8 @@
 %% load data 
-%load('C:\Paper_Data\WorkingData_7_2.mat');
+% Adjust path to wherever data and function folder is located
 load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Data_3.mat')
 addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\'));
 javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
-load('Z:\bkramer\190218_184A1_EGF\Processed_Data\CubeHelixLong.mat');
 load('Z:\bkramer\210603_184A1_EGF_Drug_Fish_4i\ProcessedData\OC_AllEGF_960.mat')
 load('Z:\bkramer\210603_184A1_EGF_Drug_Fish_4i\ProcessedData\OC_5_Drug_960.mat')
 load('Z:\bkramer\210603_184A1_EGF_Drug_Fish_4i\ProcessedData\NonRespondingUmap.mat')
@@ -92,8 +91,7 @@ axis square
 xlim([0 11])
 ylim([0 1.1])
 legend('0ng/ml','5ng/ml','100ng/ml')
-ExportPath = ['Z:\bkramer\210603_184A1_EGF_Drug_Fish_4i\Figures\Figure_5\FeatureProgression\DensityPlots_pRB.pdf'];
-export_fig(ExportPath,'-painters');
+
 
 
 % Sec13 plot

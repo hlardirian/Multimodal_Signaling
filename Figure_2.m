@@ -1,9 +1,8 @@
 %% load data 
-%load('C:\Paper_Data\WorkingData_7_2.mat');
+% Adjust path to wherever data and function folder is located
 load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Data_1.mat')
 addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\'));
 javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
-load('Z:\bkramer\190218_184A1_EGF\Processed_Data\CubeHelixLong.mat');
 
 
 %% Data description
@@ -960,8 +959,6 @@ xticks([1.5])
 xticklabels({'pooled'})
 xtickangle(90)
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\ExplainedVariancePooled.pdf'];
-% export_fig(ExportPath,'-painters')
 
 
 
@@ -1199,5 +1196,4 @@ ylim([0 4])
 ylabel('Average Variation by Cellular State')
 xlabel('Average Variation by shift in EGF concentration')
 
-% ExportPath = ['Z:\bkramer\190218_184A1_EGF\Figures\RevisionFigures\Figure_2\Raw_Figures\Variation_Scatter.pdf'];
-% export_fig(ExportPath,'-painters')
+

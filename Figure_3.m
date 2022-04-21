@@ -1,8 +1,8 @@
 %% load data 
+% Adjust path to wherever data and function folder is located
 load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\CleanCode\Data_1.mat')
 addpath(genpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\'));
 javaaddpath('Z:\bkramer\190218_184A1_EGF\Data_Analysis\Functions\umapFileExchange (1.2.1)\umap\umap.jar');
-load('Z:\bkramer\190218_184A1_EGF\Processed_Data\CubeHelixLong.mat');
 load('Z:\bkramer\190218_184A1_EGF\Data_Analysis\SingleCellDR_Normed.mat');
 
 
@@ -75,7 +75,6 @@ ylim([-4.3 6.8])
 xlim([-7.5 10.5])
 set(gcf,'position',[2963 -211 590.8 450])
 axis off
-
 
 
 colorbar
